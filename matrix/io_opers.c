@@ -5,7 +5,7 @@
 
 void get_matrix(int size, int matrix[MAX_SIZE][MAX_SIZE]) {
     printf("Enter the elements of the matrix:\n");
-
+    printf("You may eperate each row by pressing ENTER\n");
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             scanf("%d", &matrix[i][j]);
@@ -113,25 +113,25 @@ void cal_det_io(int size) {
 void matrix_io_driver() {
     int size = -1;
     char cmd[50] = {'\0'};
-    printf("##########  Command List\n");
-    printf("##########  \"EX\" to EXIT program\n");
-    printf("##########  \"MULT\" to Multiplying matrix\n");
-    printf("##########  \"DET\" to calculate Determinant of a\n");
-    printf("##########  Note: Matrix Calculator can only calculate A∈nxn\n");
 
     while (1) {
+        printf("##########  Command List\n");
+        printf("##########  \"EX\" to EXIT program\n");
+        printf("##########  \"MULT\" to Multiplying matrix\n");
+        printf("##########  \"DET\" to calculate Determinant of a\n");
+        printf("##########  Note: Matrix Calculator can only calculate A∈nxn\n");
         printf("##########  Enter Command: ");
         int retval = scanf("%s", cmd);
         if (retval <= 0) {
             break;
         }
-        if (strcmp("MULT", cmd) == 0) {
+        if (strcmp("MULT", cmd) == 0 || strcmp("mult", cmd) == 0) {
             size = get_matrix_size();
             matrix_mult(size);
-        } else if (strcmp("DET", cmd) == 0) {
+        } else if (strcmp("DET", cmd) == 0 || strcmp("det", cmd) == 0) {
             size = get_matrix_size();
             cal_det_io(size);
-        } else if (strcmp("EX", cmd) == 0) {
+        } else if (strcmp("EX", cmd) == 0 || strcmp("ex", cmd) == 0) {
             printf("Successfully Exit Program!\n");
             break;
         } else {
