@@ -9,5 +9,7 @@ Command List:
        "EX" to EXIT program
        "MULT" to Multiplying matrix
        "DET" to calculate Determinant of a matrix
+       "ADD" to adding two matrix
+       "SUB" to substracting two matrix
 
 
